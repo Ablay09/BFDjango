@@ -1,0 +1,9 @@
+.navbar{
+    color: white
+}
+.btn-info {
+  height: 30px;
+  width: 50px;
+  font-size: 13px;
+  display: inline-block;
+}

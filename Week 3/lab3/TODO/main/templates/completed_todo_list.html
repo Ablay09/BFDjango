@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <title>Title</title>
+</head>
+<body>
+<nav style="color: white" class="navbar navbar-expand-lg navbar-light bg-dark">BFDjango TODO</nav>
+<br>
+<div class="col-md-2"></div>
+            <div class="container-fluid col-md-8">
+                <button class="btn btn-primary" style="size:15px 10px">Add Task</button>
+
+
+
+
+
+<hr>
+<h2>Completed tasks in "List 1"</h2>
+
+<table class="table">
+        <tr>
+            <th>Task</th>
+            <th>Created</th>
+            <th>Due on</th>
+            <th>Owner</th>
+            <th>Mark</th>
+        </tr>
+
+        {% for task in completed_list %}
+        <tr>
+            <td><a href="">{{task.task}}</a></td>
+            <td>{{task.created}}</td>
+            <td>{{task.due_on}}</td>
+            <td>{{task.owner}}</td>
+            <td><button class="btn btn-info " >{% if task.mark %}
+            {% else %}
+                Wrong
+            {% endif %}
+            </button>
+            </td>
+        </tr>
+        {% endfor %}
+</table>
+<button class="btn btn-warning">View completed tasks</button>
+<button class="btn btn-danger">Delte this task</button>
+</div>
+
+</body>
+</html>
